@@ -43,13 +43,27 @@
 // ==================================================
 
 @mixin display($display) {
-  @if inline-block {
+  @if $display == inline-block {
     display: inline-block;
-  } @else if block {
+  } @else if $display == block {
     display: block;
-  } @else if hide {
+  } @else if $display == hide {
     display: none;
-  } @else if flex {
+  } @else if $display == flex {
     display: flex;
+  }
+}
+
+// ==================================================
+// Position
+// ==================================================
+
+@mixin position($pos) {
+  @if $pos == absolute {
+    position: absolute;
+  } @else if $pos == fixed {
+    position: fixed;
+  } @else if $pos == relative {
+    position: relative;
   }
 }

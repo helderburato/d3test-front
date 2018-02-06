@@ -36,10 +36,47 @@
     }
 
     .input__group {
+      align-items: center;
       @include display(flex);
 
+      &__mr25 {
+        margin-right: 25px;
+      }
+
+      &__break {
+        margin-bottom: 14px;
+      }
+      
+      input {
+        width: 100%;
+      }
+
+      &__field__cep {
+        width: 40%;
+      }
+
+      &__field__street {
+        width: 54%;
+      }
+
+      &__field__number {
+        width: 26%;
+      }
+
+      &__field__compl {
+        width: 65%;
+      }
+
+      &__field__state {
+        width: 19%;
+      }
+
+      &__field__city {
+        width: 50%;
+      }
+
       label,
-      &__after {
+      &__field {
         @include display(flex);
       }
     }

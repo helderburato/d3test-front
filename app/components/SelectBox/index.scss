@@ -1,0 +1,28 @@
+@import '../../stylesheets/import-styles';
+
+select.input-field {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 40px;
+  width: 100%;
+}
+
+.input__group__select {
+  @include position(relative);
+
+  &:after {
+    content: '';
+    @include position(absolute);
+    top: 44%;
+    right: 25px;
+    border: 8px solid transparent;
+    border-top: 8px solid $gray-dark;
+  }
+
+  &:focus,
+  &:hover {
+    &:after {
+      border-top-color: $green;
+    }
+  }
+}
