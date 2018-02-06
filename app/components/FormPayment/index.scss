@@ -45,3 +45,24 @@
     }
   }
 }
+
+@media screen and (max-width: $screen-sm) {
+  .form {
+    &__legend {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    &__buttons__address {
+      & button {
+        width: 100%;
+        margin: 0 0 10px 0;
+        @include display(block);
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -80,3 +80,29 @@ h2 {
 .block-detail {
   width: 38%;
 }
+
+@media screen and (max-width: $screen-sm) {
+  h1 {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    &.title__payment {
+      margin-bottom: 30px;
+    }
+  }
+
+  .col {
+    width: 100%;
+    @include display(block);
+    @include pull(none);
+  }
+
+  .content {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}

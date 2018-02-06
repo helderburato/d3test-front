@@ -11,6 +11,8 @@
     float: left;
   } @else if $side == right {
     float: right;
+  } @else if $side == none {
+    float: none;
   }
 }
 
