@@ -1,0 +1,49 @@
+@import '../../stylesheets/import-styles';
+
+.purchase-detail {
+  h3 {
+    font-size: 22px;
+    color: $green;
+    margin-bottom: 40px;
+    @include font-weight(bold);
+
+    strong {
+      font-size: 36px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 6px;
+    @include font-weight(bold);
+  }
+
+  &__list {
+    line-height: 25px;
+
+    .highlighted {
+      @include font-weight(bold);
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .purchase-detail {
+    h3 {
+      font-size: 16px;
+      margin-bottom: 20px;
+
+      strong {
+        font-size: 22px;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__list {
+      line-height: 20px;
+    }
+  }
+}

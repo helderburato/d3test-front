@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Steps from './Steps';
 import FormPayment from './FormPayment';
+import PurchaseDetail from './PurchaseDetail';
 
 const Home = props =>
   <div>
@@ -21,6 +22,8 @@ const Home = props =>
         </div>
         <div className="block-detail col">
           <h2>Detalhes da Compra</h2>
+
+          <PurchaseDetail />
         </div>
       </div>
     </div>
