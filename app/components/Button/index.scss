@@ -1,0 +1,18 @@
+@import '../../stylesheets/import-styles';
+
+.button {
+  height: 60px;
+  padding: 12px 30px;
+  color: $gray-dark;
+  border: 1px solid $gray-lighter;
+  @include border-radius(100px);
+  @include display(inline-block);
+  @include font(primary, bold);
+
+  &:hover,
+  &__success {
+    color: $white;
+    border-color: $green;
+    background-color: $green;
+  }
+}

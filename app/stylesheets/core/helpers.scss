@@ -35,3 +35,19 @@
     clear: both;
   }
 }
+
+// ==================================================
+// Display
+// ==================================================
+
+@mixin display($display) {
+  @if inline-block {
+    display: inline-block;
+  } @else if block {
+    display: block;
+  } @else if hide {
+    display: none;
+  } @else if flex {
+    display: flex;
+  }
+}

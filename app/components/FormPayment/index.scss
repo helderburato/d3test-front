@@ -1,0 +1,47 @@
+@import '../../stylesheets/import-styles';
+
+.form {
+  &__legend {
+    font-size: 18px;
+    margin-bottom: 30px;
+    @include font-weight(bold);
+  }
+
+  label {
+    font-size: 14px;
+    margin: 0;
+    color: $gray-dark;
+    @include font-weight(regular);
+  }
+
+  &__row {
+    margin-bottom: 45px;
+    @extend %clearfix;
+  }
+
+  &__buttons__address {
+    & button:last-child {
+      margin-left: 15px;
+    }
+  }
+
+  &__link {
+    font-size: 12px;
+    margin-left: 15px;
+  }
+
+  &__horizontal {
+    label {
+      margin-right: 12px;
+    }
+
+    .input__group {
+      @include display(flex);
+
+      label,
+      &__after {
+        @include display(flex);
+      }
+    }
+  }
+}

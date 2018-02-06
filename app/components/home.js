@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Steps from './Steps';
+import FormPayment from './FormPayment';
 
 const Home = props =>
   <div>
@@ -12,9 +13,11 @@ const Home = props =>
 
       <Steps active="4" />
 
-      <div className="content__wrapper">
+      <div className="content__wrapper wrapper">
         <div className="block-form col">
-          <h2>Pagamento</h2>
+          <h2 className="title__payment">Pagamento</h2>
+
+          <FormPayment />
         </div>
         <div className="block-detail col">
           <h2>Detalhes da Compra</h2>

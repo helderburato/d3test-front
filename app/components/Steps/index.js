@@ -20,19 +20,21 @@ class Steps extends Component {
 
   render() {
     return(
-      <ul className="steps">
-        {
-          this.steps.map((step, key) => {
-            let active = this.isActiveStep(step);
+      <div className="steps">
+        <ul className="wrapper">
+          {
+            this.steps.map((step, key) => {
+              let active = this.isActiveStep(step);
 
-            return (
-              <li key={key} className={active}>
-                <span className="steps__number">{step}</span>
-              </li>
-            )
-          })
-        }
-      </ul>
+              return (
+                <li key={key} className={active}>
+                  <span className="steps__number">{step}</span>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
     );
   }
 }

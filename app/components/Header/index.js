@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = props =>
   <header className="header">
-    <div className="header__wrapper">
+    <div className="header__wrapper wrapper">
       <strong className="header__logo exp">
         EXP_
       </strong>

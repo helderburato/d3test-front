@@ -1,9 +1,10 @@
 @import '../../stylesheets/import-styles';
 
 .footer {
+  background-color: $black;
+
   &__wrapper {
     padding: 30px 40px;
-    background-color: $black;
   }
 
   &__name {

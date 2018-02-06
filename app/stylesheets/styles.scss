@@ -16,6 +16,17 @@ body {
   @include font(primary, regular);
 }
 
+a {
+  font-size: 14px;
+  color: $gray-dark;
+  text-decoration: underline;
+
+  &:hover {
+    color: $green;
+    text-decoration: none;
+  }
+}
+
 h1 {
   font-size: 36px;
   margin-bottom: 80px;
@@ -27,6 +38,10 @@ h2 {
   font-size: 26px;
   margin-bottom: 30px;
   @include font(primary, bold);
+
+  &.title__payment {
+    margin-bottom: 50px;
+  }
 }
 
 #app {
@@ -45,6 +60,11 @@ h2 {
     padding-right: $gutter;
     @extend %clearfix;
   }
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .col {
