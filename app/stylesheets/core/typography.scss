@@ -27,6 +27,10 @@
   @if $weight == regular {
     font-weight: 400;
   }
+
+  @if $weight == light {
+    font-weight: 300;
+  }
   
   @if $weight == bold {
     font-weight: 700;

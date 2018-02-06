@@ -1,0 +1,18 @@
+@import '../../stylesheets/import-styles';
+
+.input-field {
+  height: 60px;
+  padding: 12px 30px;
+  border: 1px solid $gray-lighter;
+  background: $white;
+  outline: none;
+  @include font(primary, regular);
+  @include border-radius(100px);
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: $green;
+    border: 2px solid $green;
+  }
+}
