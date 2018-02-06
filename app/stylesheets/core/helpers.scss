@@ -23,3 +23,15 @@
   -moz-border-radius: $rounded;
   border-radius: $rounded;
 }
+
+// ==================================================
+// Clearfix
+// ==================================================
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
