@@ -1,0 +1,48 @@
+// ==================================================
+// Mixins
+// 
+// 1. Family
+// 2. Weight
+// ==================================================
+
+// ==================================================
+// 1. Font Family
+// ==================================================
+
+@mixin font-family($family) {
+  @if $family == primary {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  @if $family == secondary {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+  }
+}
+
+// ==================================================
+// 2. Font Weight
+// ==================================================
+
+@mixin font-weight($weight) {
+  @if $weight == regular {
+    font-weight: 400;
+  }
+  
+  @if $weight == bold {
+    font-weight: 700;
+  }
+}
+
+// ==================================================
+// 3. Default
+// ==================================================
+
+@mixin font($family, $weight) {
+  @if $family {
+    @include font-family($family);
+  }
+
+  @if $weight {
+    @include font-weight($weight);
+  }
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
-// import Counter from './components/counter';
+// import Counter from './components/Counter';
 import Home from './components/home';
 import * as SDKInitializer from './libs/SDKInitializer';
 

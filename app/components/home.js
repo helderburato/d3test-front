@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
 const Home = props =>
   <div>
-    <h1>Centauro EXP_</h1>
-  </div>;
+    <Header />
 
+    <h1>Cadastro</h1>
+
+    <Footer />
+  </div>;
 
 export default Home;

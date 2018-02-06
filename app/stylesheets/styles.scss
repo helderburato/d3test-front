@@ -1,13 +1,29 @@
+// ==================================================
+// Stylesheet
+// ==================================================
+
+// ==================================================
+// Core
+// ==================================================
+
+@import 'core/typography';
+@import 'core/variables';
+
+// ==================================================
+// Scaffolding
+// ==================================================
+body {
+  @include font(primary, regular);
+}
+
 #app {
   flex: 1;
   align-self: center;
   justify-content: center;
   align-content: center;
+}
 
-  .counter {
-    .count {
-      padding-top: 120px;
-      margin-bottom: 60px;
-    }
-  }
+h1 {
+  margin: 0 0 185px;
+  text-align: center;
 }

@@ -1,0 +1,16 @@
+@import '../../stylesheets/import-styles';
+
+.footer {
+  &__wrapper {
+    padding: 30px 50px;
+    background-color: $black;
+  }
+
+  &__name {
+    @include pull(right);
+  }
+
+  .exp {
+    color: $white;
+  }
+}
