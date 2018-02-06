@@ -1,9 +1,7 @@
 @import '../../stylesheets/import-styles';
 
 .steps {
-  padding: 0;
-  list-style-type: none;
-  margin: 0 -40px 50px;
+  margin-bottom: 50px;
   border-bottom: 1px solid $gray-lighter;
   @extend %clearfix;
 

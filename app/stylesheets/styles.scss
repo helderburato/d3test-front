@@ -2,19 +2,31 @@
 // Stylesheet
 // ==================================================
 
-// ==================================================
-// Core
-// ==================================================
-
+@import 'core/helpers';
 @import 'core/typography';
 @import 'core/variables';
 
 // ==================================================
 // Scaffolding
 // ==================================================
+
 body {
-  @include font(primary, regular);
+  font-size: $text-size;
   color: $black;
+  @include font(primary, regular);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 80px;
+  text-align: center;
+  @include font(primary, bold);
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  @include font(primary, bold);
 }
 
 #app {
@@ -24,13 +36,27 @@ body {
   align-content: center;
 }
 
-h1 {
-  font-size: 36px;
-  margin: 0 0 80px;
-  text-align: center;
-  @include font(primary, bold);
+.content {
+  padding-top: 30px;
+  padding-bottom: 80px;
+
+  &__wrapper {
+    padding-left: $gutter;
+    padding-right: $gutter;
+    @extend %clearfix;
+  }
 }
 
-.content {
-  padding: 30px 40px 80px;
+.col {
+  padding-right: $gutter;
+  padding-left: $gutter;
+  @include pull(left);
+}
+
+.block-form {
+  width: 62%;
+}
+
+.block-detail {
+  width: 38%;
 }
