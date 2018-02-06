@@ -6,7 +6,9 @@ const Home = props =>
   <div>
     <Header />
 
-    <h1>Cadastro</h1>
+    <div className="content">
+      <h1>Cadastro</h1>
+    </div>
 
     <Footer />
   </div>;

@@ -14,6 +14,7 @@
 // ==================================================
 body {
   @include font(primary, regular);
+  color: $black;
 }
 
 #app {
@@ -24,6 +25,10 @@ body {
 }
 
 h1 {
-  margin: 0 0 185px;
+  margin: 0 0 60px;
   text-align: center;
+}
+
+.content {
+  padding: 40px 40px 60px;
 }

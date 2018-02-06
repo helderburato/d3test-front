@@ -1,6 +1,9 @@
 @import '../../stylesheets/import-styles';
 
 .footer {
+  justify-content: middle;
+  align-content: middle;
+
   &__wrapper {
     padding: 40px;
     background-color: $black;
