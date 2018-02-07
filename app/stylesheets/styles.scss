@@ -1,110 +1,11 @@
 // ==================================================
-// Stylesheet
+// Import
+// 
+// Helpers
+// Typography
+// Variables 
 // ==================================================
 
 @import 'core/helpers';
 @import 'core/typography';
 @import 'core/variables';
-
-// ==================================================
-// Scaffolding
-// ==================================================
-
-body {
-  font-size: $text-size;
-  color: $black;
-  @include font(primary, regular);
-}
-
-a {
-  font-size: 14px;
-  color: $gray-dark;
-  text-decoration: underline;
-
-  &:hover {
-    color: $green;
-    text-decoration: none;
-  }
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 80px;
-  text-align: center;
-  @include font(primary, bold);
-}
-
-h2 {
-  font-size: 26px;
-  margin-bottom: 30px;
-  @include font(primary, bold);
-
-  &.title__payment {
-    margin-bottom: 50px;
-  }
-}
-
-#app {
-  flex: 1;
-  align-self: center;
-  justify-content: center;
-  align-content: center;
-}
-
-.content {
-  padding-top: 30px;
-  padding-bottom: 80px;
-
-  &__wrapper {
-    padding-left: $gutter;
-    padding-right: $gutter;
-    @extend %clearfix;
-  }
-}
-
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.col {
-  padding-right: $gutter;
-  padding-left: $gutter;
-  @include pull(left);
-}
-
-.block-form {
-  width: 62%;
-}
-
-.block-detail {
-  width: 38%;
-}
-
-@media screen and (max-width: $screen-sm) {
-  h1 {
-    font-size: 26px;
-    margin-bottom: 40px;
-  }
-  h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-
-    &.title__payment {
-      margin-bottom: 30px;
-    }
-  }
-
-  .col {
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    @include display(block);
-    @include pull(none);
-  }
-
-  .content {
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
-}

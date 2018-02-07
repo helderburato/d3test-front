@@ -1,18 +1,41 @@
-@import '../../stylesheets/import-styles';
+@import '../../stylesheets/styles';
 
 .button {
-  height: 60px;
-  padding: 12px 30px;
+  height: 75px;
+  padding: 12px 45px;
   color: $gray-dark;
   border: 1px solid $gray-lighter;
+  font-size: 16px;
+  outline: none;
   @include border-radius(100px);
   @include display(inline-block);
-  @include font(primary, bold);
+  @include font(primary, regular);
 
   &__success {
     color: $white;
     border-color: $green;
     background-color: $green;
+  }
+
+  &__back {
+    padding-left: 60px;
+    @include position(relative);
+
+    &:after {
+      content: '';
+      border-right: 8px solid $gray-dark;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      top: 40%;
+      left: 25px;
+      @include position(absolute);
+    }
+
+    &:hover {
+      &:after {
+        border-right-color: $white;
+      }
+    }
   }
 
   &:hover,

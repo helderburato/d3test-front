@@ -153,9 +153,7 @@ class FormPayment extends Component {
         </div>
 
         <div className="submit">
-          <Button className="button">
-            Voltar
-          </Button>
+          <Button className="button__back button">Voltar</Button>
           <Button  type="submit" className="button__success button">Finalizar Compra</Button>
         </div>
       </form>
