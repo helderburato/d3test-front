@@ -6,6 +6,7 @@
   border: 1px solid $gray-lighter;
   background: $white;
   outline: none;
+  @include position(relative);
   @include font(primary, regular);
   @include border-radius(100px);
 
@@ -14,5 +15,20 @@
   &:focus {
     color: $green;
     border: 2px solid $green;
+  }
+
+  & {
+    &__error {
+      border-width: 2px;
+      border-color: $red;
+      color: $red;
+      padding-right: 50px;
+  
+      &:hover,
+      &:focus {
+        color: $red;
+        border-color: darken($red, 10%);
+      }
+    }
   }
 }

@@ -46,6 +46,24 @@
     .input__group {
       align-items: center;
       @include display(flex);
+      
+      &__field {
+        @include position(relative);
+      }
+
+      &__error {
+        &:after {
+          content: '';
+          height: 18px;
+          width: 18px;
+          top: 38%;
+          right: 25px;
+          background: url('./img/ico-warning.png') no-repeat;
+          background-size: cover;
+          border: none;
+          @include position(absolute);
+        }
+      }
 
       &__mr25 {
         margin-right: 25px;
@@ -97,19 +115,19 @@
       }
 
       &__field__card_number {
-        width: 45.5%;
+        width: 37%;
       }
 
       &__field__card_name {
-        width: 30%;
-      }
-
-      &__field__card_name {
-        width: 30%;
+        width: 38.5%;
       }
 
       &__field__plots {
         width: 55%;
+      }
+
+      &__field__card_code {
+        width: 25%;
       }
 
       label,

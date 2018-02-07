@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-const InputField = props =>
-  <input {...props} />;
+class InputField extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    const $input = this.inputElement;
+    const $parent = $input.parentElement;
+
+    this.toggleClass($parent, 'input__group__error', nextProps.error);
+    this.toggleClass($input, 'input-field__error', nextProps.error);
+  }
+
+  toggleClass($el, className, toggle = false) {
+    if (toggle) {
+      $el.classList.add(className);
+    } else {
+      $el.classList.remove(className);
+    }
+  }
+
+  render() {
+    let props = Object.assign({}, this.props);
+    delete props.error;
+
+    return(
+      <input 
+        {...props}
+        ref={(input) => (this.inputElement = input)}
+      />
+    );
+  }
+}
 
 InputField.defaultProps = {
   type: 'text',
