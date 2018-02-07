@@ -17,6 +17,10 @@
   &__row {
     margin-bottom: 45px;
     @extend %clearfix;
+
+    &__hidden {
+      @include display(hide);
+    }
   }
 
   &__buttons__address {
