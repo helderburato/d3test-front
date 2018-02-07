@@ -9,10 +9,16 @@
   @include display(inline-block);
   @include font(primary, bold);
 
-  &:hover,
   &__success {
     color: $white;
     border-color: $green;
     background-color: $green;
+  }
+
+  &:hover,
+  &__success:hover {
+    border-color: darken($green, 10%);
+    background-color: darken($green, 10%);
+    color: $white;
   }
 }

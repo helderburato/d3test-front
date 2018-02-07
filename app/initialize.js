@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 // import Counter from './components/Counter';
-import Home from './components/home';
+import Home from './containers/Home';
 import * as SDKInitializer from './libs/SDKInitializer';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);

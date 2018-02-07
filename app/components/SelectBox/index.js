@@ -21,7 +21,7 @@ class SelectBox extends Component {
       <select name={this.props.name} className="input-field" value={this.state.value} onChange={this.onChange.bind(this)}>
         <option value=""></option>
         {this.props.options.map(option => {
-          return <option value={option} key={option} checked={this.state.value === option}>{option}</option>
+          return <option value={option.value} key={option.value} checked={this.state.value === option.value}>{option.name}</option>
         })}
       </select>
     )

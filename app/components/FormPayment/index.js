@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import InputField from '../InputField';
 import Button from '../Button';
 import SelectBox from '../SelectBox';
+import { states, cities, months, years, plots } from '../../constants/formOptions';
 
 class FormPayment extends Component {
   constructor(props) {
@@ -72,7 +73,7 @@ class FormPayment extends Component {
             <div className="input__group__field input__group__field__state input__group__select">
               <SelectBox 
                 name="estado" 
-                options={['SC', 'SP']}
+                options={states}
               />
             </div>
           </div>
@@ -82,10 +83,80 @@ class FormPayment extends Component {
             <div className="input__group__field input__group__field__city input__group__select">
               <SelectBox 
                 name="cidade" 
-                options={['São Paulo']}
+                options={ cities }
               />
             </div>
           </div>
+        </div>
+
+        <div className="form__row">
+          <p className="form__legend">Dados do cartão</p>
+
+          <div className="input__group input__group__break">
+            <label htmlFor="card_number">Número</label>
+            <div className="input__group__field input__group__field__card_number input__group__mr25">
+              <InputField 
+                type="tel"
+                name="card_number" 
+                id="card_number"
+              />
+            </div>
+
+            <label htmlFor="card_name">Nome Completo</label>
+            <div className="input__group__field input__group__field__card_name">
+              <InputField
+                name="card_name"
+                id="card_name"
+              />
+            </div>
+          </div>
+
+          <div className="input__group input__group__break">
+            <label htmlFor="card_date_month">Validade</label>
+            <div className="input__group__field input__group__field__dates input__group__mr25">
+              <div className="input__group__field input__group__field__month input__group__select">
+                <SelectBox 
+                  name="card_date_month"
+                  options={ months }
+                />
+              </div>
+              <div className="input__group__field input__group__field__year input__group__select">
+                <SelectBox 
+                  name="card_valid_year" 
+                  options={ years }
+                />
+              </div>
+            </div>
+
+            <label htmlFor="card_code">Código de segurança</label>
+            <div className="input__group__field">
+              <InputField
+                type="tel"
+                name="card_code"
+                id="card_code"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="form__row">
+          <p className="form__legend">Valor e parcelamento</p>
+
+          <div className="input__group input__group__break">
+            <div className="input__group__field input__group__field__plots input__group__select">
+              <SelectBox 
+                name="plots"
+                options={ plots }
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="submit">
+          <Button className="button">
+            Voltar
+          </Button>
+          <Button  type="submit" className="button__success button">Finalizar Compra</Button>
         </div>
       </form>
     )

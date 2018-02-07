@@ -30,6 +30,14 @@
     margin-left: 15px;
   }
 
+  .submit {
+    @extend %clearfix;
+
+    .button__success {
+      @include pull(right);
+    }
+  }
+
   &__horizontal {
     label {
       margin-right: 12px;
@@ -73,6 +81,35 @@
 
       &__field__city {
         width: 50%;
+      }
+
+      &__field__dates {
+        width: 46%;
+      }
+
+      &__field__month {
+        margin-right: 15px;
+      }
+
+      &__field__month,
+      &__field__year {
+        width: 47%;
+      }
+
+      &__field__card_number {
+        width: 45.5%;
+      }
+
+      &__field__card_name {
+        width: 30%;
+      }
+
+      &__field__card_name {
+        width: 30%;
+      }
+
+      &__field__plots {
+        width: 55%;
       }
 
       label,
