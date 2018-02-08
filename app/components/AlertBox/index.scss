@@ -1,0 +1,78 @@
+@import '../../stylesheets/styles';
+
+.alert-box {
+  border-bottom: 1px solid $gray-lighter;
+
+  &__hidden {
+    @include display(hide);
+  }
+
+  & &__wrapper {
+    padding: 30px 40px;
+    @include position(relative);
+  }
+
+  &__close {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    @include position(absolute);
+
+    &:before,
+    &:after {
+      content: '';
+      height: 40px;
+      width: 3px;
+      top: 0;
+      background-color: $black;
+      @include position(absolute);
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__required {
+    color: $gray-dark;
+    padding-left: 30px;
+    @include position(relative);
+
+    &:before {
+      content: '';
+      background: url(../img/ico-warning.png) no-repeat;
+      background-size: cover;
+      height: 18px;
+      width: 18px;
+      top: 1px;
+      left: 0;
+      @include position(absolute);
+    }
+  }
+
+  &__required,
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__title {
+    font-size: 30px;
+    color: $red;
+    @include font-weight(bold);
+  }
+
+  &__message {
+    line-height: 26px;
+    width: 59%;
+    margin: 0;
+  }
+}
