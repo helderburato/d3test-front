@@ -10,8 +10,8 @@ class SelectBox extends Component {
     const $input = this.inputElement;
     const $parent = $input.parentElement;
 
-    this.toggleClass($parent, 'input__group__error', nextProps.error);
-    this.toggleClass($input, 'input-field__error', nextProps.error);
+    this.toggleClass($parent, 'input__group__error', nextProps['data-error']);
+    this.toggleClass($input, 'input-field__error', nextProps['data-error']);
   }
 
   toggleClass($el, className, toggle = false) {
@@ -24,7 +24,6 @@ class SelectBox extends Component {
 
   render() {
     let props = Object.assign({}, this.props);
-    delete props.error;
     delete props.options;
 
     return(

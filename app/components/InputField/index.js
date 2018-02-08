@@ -11,8 +11,8 @@ class InputField extends Component {
     const $input = this.inputElement;
     const $parent = $input.parentElement;
 
-    this.toggleClass($parent, 'input__group__error', nextProps.error);
-    this.toggleClass($input, 'input-field__error', nextProps.error);
+    this.toggleClass($parent, 'input__group__error', nextProps['data-error']);
+    this.toggleClass($input, 'input-field__error', nextProps['data-error']);
   }
 
   toggleClass($el, className, toggle = false) {

@@ -5,6 +5,7 @@ import SelectBox from '../SelectBox';
 import { states, cities, months, years, plots } from '../../constants/formOptions';
 import validationUtil from '../../utils/validationUtil';
 import Cards from 'react-credit-cards';
+import InputMask from 'react-input-mask';
 
 class FormPayment extends Component {
   constructor(props) {
@@ -230,16 +231,16 @@ class FormPayment extends Component {
             <div className="input__group">
               <label htmlFor="zipcode">CEP</label>
               <div className="input__group__field input__group__field__cep">
-                <InputField
+                <InputMask
                   className="input-field input-field__cep"
                   type="tel"
                   name="zipcode" 
                   id="zipcode"
-                  mask={"00000-000"}
                   onChange={this.onChange.bind(this)}
                   value={this.state.zipcode}
-                  error={this.state.zipcodeError}
-                  maxLength="9"
+                  data-error={this.state.zipcodeError}
+                  mask="99999-999"
+                  maskChar=""
                 />
               </div>
               <a className="form__link" href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCepEndereco.cfm" target="_blank">
@@ -260,7 +261,7 @@ class FormPayment extends Component {
                   id="street"
                   onChange={this.onChange.bind(this)}
                   value={this.state.street}
-                  error={this.state.streetError}
+                  data-error={this.state.streetError}
                 />
               </div>
 
@@ -272,7 +273,7 @@ class FormPayment extends Component {
                   id="number" 
                   onChange={this.onChange.bind(this)}
                   value={this.state.number}
-                  error={this.state.numberError}
+                  data-error={this.state.numberError}
                   maxLength="8"
                 />
               </div>
@@ -297,7 +298,7 @@ class FormPayment extends Component {
                   options={states}
                   onChange={this.onChange.bind(this)}
                   value={this.state.state}
-                  error={this.state.stateError}
+                  data-error={this.state.stateError}
                 />
               </div>
             </div>
@@ -310,7 +311,7 @@ class FormPayment extends Component {
                   options={cities}
                   onChange={this.onChange.bind(this)}
                   value={this.state.city}
-                  error={this.state.cityError}
+                  data-error={this.state.cityError}
                 />
               </div>
             </div>
@@ -333,13 +334,16 @@ class FormPayment extends Component {
           <div className="input__group input__group__break">
             <label htmlFor="card_number">Número</label>
             <div className="input__group__field input__group__field__card_number input__group__mr25">
-              <InputField
+
+              <InputMask
                 name="card_number" 
                 id="card_number"
+                className="input-field"
                 onChange={this.onChange.bind(this)}
                 value={this.state.card_number}
-                error={this.state.card_numberError}
-                maxLength="16"
+                data-error={this.state.card_numberError}
+                mask="9999 9999 9999 9999"
+                maskChar=""
               />
             </div>
 
@@ -350,7 +354,7 @@ class FormPayment extends Component {
                 id="card_name"
                 onChange={this.onChange.bind(this)}
                 value={this.state.card_name}
-                error={this.state.card_nameError}
+                data-error={this.state.card_nameError}
                 maxLength="30"
               />
             </div>
@@ -365,7 +369,7 @@ class FormPayment extends Component {
                   options={months}
                   onChange={this.onChange.bind(this)}
                   value={this.state.card_month}
-                  error={this.state.card_monthError}
+                  data-error={this.state.card_monthError}
                 />
               </div>
               <div className="input__group__field input__group__field__year input__group__select">
@@ -374,7 +378,7 @@ class FormPayment extends Component {
                   options={years}
                   onChange={this.onChange.bind(this)}
                   value={this.state.card_year}
-                  error={this.state.card_yearError}
+                  data-error={this.state.card_yearError}
                 />
               </div>
             </div>
@@ -387,7 +391,7 @@ class FormPayment extends Component {
                 id="cvc"
                 onChange={this.onChange.bind(this)}
                 value={this.state.cvc}
-                error={this.state.cvcError}
+                data-error={this.state.cvcError}
                 maxLength="4"
                 onClick={this.handleClick.bind(this)}
                 onBlur={this.handleBlurCVC.bind(this)}
@@ -406,7 +410,7 @@ class FormPayment extends Component {
                 options={plots}
                 onChange={this.onChange.bind(this)}
                 value={this.state.plots}
-                error={this.state.plotsError}
+                data-error={this.state.plotsError}
               />
             </div>
           </div>
