@@ -19,56 +19,57 @@ const states = [
 const months = [
   {
     name: 'Janeiro',
-    value: 1
+    value: '01'
   },
   {
     name: 'Fevereiro',
-    value: 2
+    value: '02'
   },
   {
     name: 'Março',
-    value: 3
+    value: '03'
   },
   {
     name: 'Abril',
-    value: 4
+    value: '04'
   },
   {
     name: 'Maio',
-    value: 5
+    value: '05'
   },
   {
     name: 'Junho',
-    value: 6
+    value: '06'
   },
   {
     name: 'Julho',
-    value: 7
+    value: '07'
   },
   {
     name: 'Agosto',
-    value: 8
+    value: '08'
   },
   {
     name: 'Setembro',
-    value: 9
+    value: '09'
   },
   {
     name: 'Outubro',
-    value: 10
+    value: '10'
   },
   {
     name: 'Novembro',
-    value: 11
+    value: '11'
   },
   {
     name: 'Dezembro',
-    value: 12
+    value: '12'
   },
 ];
 
-const startYear = (new Date()).getFullYear();
-const endYear = startYear + 10;
+const startYear = (new Date()).getFullYear().toString().substr(-2);
+const countYear = 10;
+const endYear = parseInt(startYear) + countYear;
 let years = [];
 let i = 0;
 

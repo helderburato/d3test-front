@@ -4,6 +4,7 @@ import Button from '../Button';
 import SelectBox from '../SelectBox';
 import { states, cities, months, years, plots } from '../../constants/formOptions';
 import validationUtil from '../../utils/validationUtil';
+import Cards from 'react-credit-cards';
 
 class FormPayment extends Component {
   constructor(props) {
@@ -22,8 +23,10 @@ class FormPayment extends Component {
       card_number: '',
       card_month: '',
       card_year: '',
-      card_code: '',
+      cvc: '',
       plots: '',
+      card_expiry: '',
+      focused: 'card_name',
       rules: [
         {
           name: 'zipcode',
@@ -71,7 +74,7 @@ class FormPayment extends Component {
           address: null
         },
         {
-          name: 'card_code',
+          name: 'cvc',
           validations: ['required', 'number'],
           address: null
         },
@@ -146,6 +149,12 @@ class FormPayment extends Component {
     if (event.target.value === 'sameAddress') {
       this.clearValidateAddress();
     }
+
+    if (event.target.name === 'cvc') {
+      this.setState({
+        focused: event.target.name
+      });
+    }
   }
 
   clearValidateAddress() {
@@ -168,7 +177,7 @@ class FormPayment extends Component {
       card_numberError: false,
       card_monthError: false,
       card_yearError: false,
-      card_codeError: false,
+      cvcError: false,
       plotsError: false,
     });
   }
@@ -185,8 +194,14 @@ class FormPayment extends Component {
       card_number: '',
       card_month: '',
       card_year: '',
-      card_code: '',
+      cvc: '',
       plots: '',
+    });
+  }
+
+  handleBlurCVC(event) {
+    this.setState({
+      focused: 'card_name'
     });
   }
 
@@ -305,16 +320,26 @@ class FormPayment extends Component {
         <div className="form__row">
           <p className="form__legend">Dados do cartão</p>
 
+          <Cards
+            cvc={this.state.cvc}
+            number={this.state.card_number}
+            name={this.state.card_name}
+            locale={{ valid: 'MÊS/ANO' }}
+            placeholders={ { name: 'NOME COMPLETO' } }
+            expiry={(this.state.card_month < 10 ? this.state.card_month : this.state.card_month) + this.state.card_year}
+            focused={this.state.focused}
+          />
+
           <div className="input__group input__group__break">
             <label htmlFor="card_number">Número</label>
             <div className="input__group__field input__group__field__card_number input__group__mr25">
-              <InputField 
-                type="tel"
+              <InputField
                 name="card_number" 
                 id="card_number"
                 onChange={this.onChange.bind(this)}
                 value={this.state.card_number}
                 error={this.state.card_numberError}
+                maxLength="16"
               />
             </div>
 
@@ -326,6 +351,7 @@ class FormPayment extends Component {
                 onChange={this.onChange.bind(this)}
                 value={this.state.card_name}
                 error={this.state.card_nameError}
+                maxLength="30"
               />
             </div>
           </div>
@@ -357,12 +383,14 @@ class FormPayment extends Component {
             <div className="input__group__field input__group__field__card_code">
               <InputField
                 type="tel"
-                name="card_code"
-                id="card_code"
+                name="cvc"
+                id="cvc"
                 onChange={this.onChange.bind(this)}
-                value={this.state.card_code}
-                error={this.state.card_codeError}
+                value={this.state.cvc}
+                error={this.state.cvcError}
                 maxLength="4"
+                onClick={this.handleClick.bind(this)}
+                onBlur={this.handleBlurCVC.bind(this)}
               />
             </div>
           </div>
