@@ -16,7 +16,7 @@
     height: 40px;
     width: 40px;
     padding: 0;
-    top: 40px;
+    top: 20px;
     right: 40px;
     background: none;
     border: none;
@@ -74,5 +74,18 @@
     line-height: 26px;
     width: 59%;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .alert-box {
+    &__title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    &__message {
+      width: 100%;
+    }
   }
 }

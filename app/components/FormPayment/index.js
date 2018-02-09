@@ -265,17 +265,19 @@ class FormPayment extends Component {
                 />
               </div>
 
-              <label htmlFor="number">Número</label>
-              <div className="input__group__field input__group__field__number">
-                <InputField
-                  type="tel"
-                  name="number"
-                  id="number" 
-                  onChange={this.onChange.bind(this)}
-                  value={this.state.number}
-                  data-error={this.state.numberError}
-                  maxLength="8"
-                />
+              <div className="input__group__wrapper">
+                <label htmlFor="number">Número</label>
+                <div className="input__group__field input__group__field__number">
+                  <InputField
+                    type="tel"
+                    name="number"
+                    id="number" 
+                    onChange={this.onChange.bind(this)}
+                    value={this.state.number}
+                    data-error={this.state.numberError}
+                    maxLength="8"
+                  />
+                </div>
               </div>
             </div>
 
@@ -383,7 +385,7 @@ class FormPayment extends Component {
               </div>
             </div>
 
-            <label htmlFor="card_code">Código de segurança</label>
+            <label htmlFor="cvc">Código de segurança</label>
             <div className="input__group__field input__group__field__card_code">
               <InputField
                 type="tel"

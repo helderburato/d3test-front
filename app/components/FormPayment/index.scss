@@ -144,9 +144,33 @@
 
 @media screen and (max-width: $screen-sm) {
   .form {
+    &__row {
+      margin-bottom: 20px;
+    }
+
     &__legend {
       font-size: 16px;
       margin-bottom: 20px;
+    }
+
+    &__horizontal {
+      .input__group {
+
+        & {
+          @include display(block);
+        }
+
+        label {
+          margin-right: 0;
+          margin-bottom: 5px;
+          padding-left: 25px;
+        }
+
+        &__field {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+      }
     }
 
     &__buttons__address {

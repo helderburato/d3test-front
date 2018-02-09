@@ -45,3 +45,20 @@
     color: $white;
   }
 }
+
+@media screen and (max-width: $screen-sm) {
+  .button {
+    font-size: 14px;
+    height: 50px;
+    padding: 12px 30px;
+
+    &__back {
+      padding-left: 30px;
+
+      &:after {
+        top: 34%;
+        left: 15px;
+      }
+    }
+  }
+}

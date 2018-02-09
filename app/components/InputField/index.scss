@@ -32,3 +32,9 @@
     }
   }
 }
+
+@media screen and (max-width: $screen-sm) {
+  .input-field {
+    height: 50px;
+  }
+}

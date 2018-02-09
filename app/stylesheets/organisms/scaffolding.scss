@@ -90,5 +90,13 @@ h2 {
   .content {
     padding-top: 20px;
     padding-bottom: 40px;
+
+    &__wrapper {
+      padding-top: 30px;
+    }
+  }
+
+  .block-form {
+    margin-bottom: 30px;
   }
 }
