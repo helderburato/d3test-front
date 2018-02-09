@@ -7,3 +7,11 @@ export const decrement = () => ({
 export const increment = () => ({
   type: INCREMENT
 });
+
+export const paymentValid = () => ({
+  type: PAYMENT_VALID
+});
+
+export const paymentInvalid = () => ({
+  type: PAYMENT_INVALID
+});

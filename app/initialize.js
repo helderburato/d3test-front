@@ -7,10 +7,13 @@ import reducers from './reducers';
 import HomeContainer from './containers/HomeContainer';
 import * as SDKInitializer from './libs/SDKInitializer';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const store = createStore(
+  reducers,
+  applyMiddleware()
+);
 
 const App = () =>
-	<Provider store={createStoreWithMiddleware(reducers)}>
+	<Provider store={store}>
 		<HomeContainer />
 	</Provider>;
 

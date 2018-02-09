@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import InputField from '../InputField';
 import Button from '../Button';
 import SelectBox from '../SelectBox';
@@ -98,7 +99,9 @@ class FormPayment extends Component {
 
     this.validate();
 
-    if (!this.state.invalidForm) {
+    if (this.props.payment.valid) {
+      this.props.paymentValid();
+
       this.clearValidate();
       this.clearForm();
     }
@@ -106,14 +109,17 @@ class FormPayment extends Component {
 
   validate() {
     let invalidForm = false;
+    let errors = {};
 
     this.state.rules.map(field => {
       if ((validationUtil.isEqualObject(field.validations, ['required']) && this.isSameAddress(field.address))) {
         if (validationUtil.isEmpty(this.state[field.name])) {
           invalidForm = true;
           this._setFieldError(field.name, true);
+          errors[field.name] = true;
         } else {
           this._setFieldError(field.name, false);
+          if (errors[field.name]) delete errors[field.name];
         }
       }
 
@@ -121,13 +127,19 @@ class FormPayment extends Component {
         if (validationUtil.isEmpty(this.state[field.name]) || !validationUtil.isNumber(this.state[field.name])) {
           invalidForm = true;
           this._setFieldError(field.name, true);
+          errors[field.name] = true;
         } else {
           this._setFieldError(field.name, false);
+          if (errors[field.name]) delete errors[field.name];
         }
       }
     });
 
-    this.state.invalidForm = invalidForm;
+    if (invalidForm) {
+      this.props.paymentInvalid(errors);
+    } else {
+      this.props.paymentValid();
+    }
 
     this.setState(this.state);
   }
@@ -424,4 +436,26 @@ class FormPayment extends Component {
   }
 }
 
-export default FormPayment;
+const mapStateToProps = (state) => {
+  return {
+    payment: state.payment
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    paymentValid: () => {
+      dispatch({
+        type: "PAYMENT_VALID"
+      });
+    },
+    paymentInvalid: (errors) => {
+      dispatch({
+        type: "PAYMENT_INVALID",
+        payload: errors
+      });
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormPayment);

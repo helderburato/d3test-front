@@ -21,6 +21,7 @@
     background: none;
     border: none;
     outline: none;
+    z-index: 10;
     @include position(absolute);
 
     &:before,
@@ -70,10 +71,26 @@
     @include font-weight(bold);
   }
 
+  &__fields {
+    @include display(block);
+
+    &__hidden {
+      @include display(hide);
+    }
+  }
+
   &__message {
     line-height: 26px;
     width: 59%;
     margin: 0;
+
+    &__card {
+      @include display(block);
+
+      &__hidden {
+        @include display(hide);
+      }
+    }
   }
 }
 
