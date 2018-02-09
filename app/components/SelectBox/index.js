@@ -27,7 +27,7 @@ class SelectBox extends Component {
     delete props.options;
 
     return(
-      <select {...props} ref={(input) => (this.inputElement = input)} className="input-field">
+      <select {...props} ref={ (node) => {this.inputElement = node} } className="input-field">
         <option value=""></option>
         {this.props.options.map(option => {
           return <option value={option.value} key={option.value} checked={this.props.value === option.value}>{option.name}</option>

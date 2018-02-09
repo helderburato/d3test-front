@@ -56,7 +56,7 @@ class FormPayment extends Component {
         },
         {
           name: 'card_number',
-          validations: ['required', 'number'],
+          validations: ['required'],
           address: null
         },
         {
@@ -210,7 +210,7 @@ class FormPayment extends Component {
     let showFieldsAddress = (this.state.sendAddress === 'sameAddress' ? true : false);
 
     return(
-      <form onSubmit={this.onSubmit.bind(this)} className="form__horizontal form">
+      <form ref={ (node) => {this.formElement = node} } onSubmit={this.onSubmit.bind(this)} className="form__horizontal form">
         <div className="form__buttons__address form__row">
           <p className="form__legend">Endereço de cobrança</p>
 
@@ -231,7 +231,7 @@ class FormPayment extends Component {
             <div className="input__group">
               <label htmlFor="zipcode">CEP</label>
               <div className="input__group__field input__group__field__cep">
-                <InputMask
+                <InputField
                   className="input-field input-field__cep"
                   type="tel"
                   name="zipcode" 
@@ -265,19 +265,17 @@ class FormPayment extends Component {
                 />
               </div>
 
-              <div className="input__group__wrapper">
-                <label htmlFor="number">Número</label>
-                <div className="input__group__field input__group__field__number">
-                  <InputField
-                    type="tel"
-                    name="number"
-                    id="number" 
-                    onChange={this.onChange.bind(this)}
-                    value={this.state.number}
-                    data-error={this.state.numberError}
-                    maxLength="8"
-                  />
-                </div>
+              <label htmlFor="number">Número</label>
+              <div className="input__group__field input__group__field__number">
+                <InputField
+                  type="tel"
+                  name="number"
+                  id="number" 
+                  onChange={this.onChange.bind(this)}
+                  value={this.state.number}
+                  data-error={this.state.numberError}
+                  maxLength="8"
+                />
               </div>
             </div>
 
@@ -337,7 +335,7 @@ class FormPayment extends Component {
             <label htmlFor="card_number">Número</label>
             <div className="input__group__field input__group__field__card_number input__group__mr25">
 
-              <InputMask
+              <InputField
                 name="card_number" 
                 id="card_number"
                 className="input-field"

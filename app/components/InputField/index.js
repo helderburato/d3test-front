@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
 
 class InputField extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class InputField extends Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    const $input = this.inputElement;
+    const $input = this.inputElement.input;
     const $parent = $input.parentElement;
 
     this.toggleClass($parent, 'input__group__error', nextProps['data-error']);
@@ -25,12 +26,11 @@ class InputField extends Component {
 
   render() {
     let props = Object.assign({}, this.props);
-    delete props.error;
 
     return(
-      <input 
-        {...props}
-        ref={(input) => (this.inputElement = input)}
+      <InputMask 
+        {...this.props}
+        ref={(node) => (this.inputElement = node)}
       />
     );
   }
