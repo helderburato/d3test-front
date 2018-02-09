@@ -6,7 +6,7 @@ import FormPayment from '../components/FormPayment';
 import PurchaseDetail from '../components/PurchaseDetail';
 import AlertBox from '../components/AlertBox';
 
-const Home = props =>
+const HomeContainer = props =>
   <div>
     <Header />
 
@@ -34,4 +34,4 @@ const Home = props =>
     <Footer />
   </div>;
 
-export default Home;
+export default HomeContainer;

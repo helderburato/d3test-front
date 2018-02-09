@@ -4,14 +4,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 // import Counter from './components/Counter';
-import Home from './containers/Home';
+import HomeContainer from './containers/HomeContainer';
 import * as SDKInitializer from './libs/SDKInitializer';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 const App = () =>
 	<Provider store={createStoreWithMiddleware(reducers)}>
-		<Home />
+		<HomeContainer />
 	</Provider>;
 
 ReactDOM.render(<App />, document.querySelector('#app'));
