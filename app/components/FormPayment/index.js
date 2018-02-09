@@ -5,7 +5,6 @@ import SelectBox from '../SelectBox';
 import { states, cities, months, years, plots } from '../../constants/formOptions';
 import validationUtil from '../../utils/validationUtil';
 import Cards from 'react-credit-cards';
-import InputMask from 'react-input-mask';
 
 class FormPayment extends Component {
   constructor(props) {
