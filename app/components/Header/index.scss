@@ -15,7 +15,7 @@
   @include font-weight(bold);
 }
 
-@media screen and (max-width: $screen-sm) {
+@media screen and (max-width: $screen-md) {
   .header {
     &__wrapper {
       padding: 20px;
